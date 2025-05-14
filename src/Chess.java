@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Chess {
     private final Board board;
     private final Deque<Player> players;
-    private int attempts = 0;
 
     public Chess() {
         board = new Board();
@@ -18,6 +17,7 @@ public class Chess {
     }
 
     public void start() {
+        var attempts = 0;
         // Game loop
         do {
             Player player = players.getFirst();
@@ -30,9 +30,9 @@ public class Chess {
                 ++played;
                 if(getPlayerMove(player)) played = 10;
             }
+            board.display();
             if(played == 3) {
                 System.out.println(players.getFirst().getColour() + " won");
-                board.display();
                 return;
             }
             attempts++;
