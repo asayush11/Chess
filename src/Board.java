@@ -70,7 +70,7 @@ public class Board {
             for(int j=0;j<8;++j) {
                 Piece piece = cells[8*i + j].getPiece();
                 if(piece == null) System.out.print("Empty ");
-                else System.out.print(piece.getPieceType() + " ");
+                else System.out.print(piece.getColour() + " " + piece.getPieceType() + "       ");
             }
         }
     }
